@@ -1,0 +1,30 @@
+.traitOption {
+    padding-bottom: 1%;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapseContent {
+    display:flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.pictureRow {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.scoreIMG {
+    object-fit: fill;
+    aspect-ratio: 3/2;
+    width: 30%;
+    border-radius: 30px;
+    margin-left: 1%;
+}

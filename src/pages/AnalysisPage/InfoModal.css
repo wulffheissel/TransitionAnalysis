@@ -1,0 +1,19 @@
+.generalInfoButton {
+  align-items: center;
+  border: 0px;
+  color: var(--nextui-colors-primarySolidContrast);
+  background-color: var(--nextui-colors-warning);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding: 10px;
+  width: 100%;
+  font-size: var(--nextui-fontSizes-md);
+  cursor: pointer;
+  box-shadow: 0 3px 4px 1px rgb(104 112 118 / 15%);
+}
+
+.generalInfoButton:active {
+  transform: scale(0.97);
+}

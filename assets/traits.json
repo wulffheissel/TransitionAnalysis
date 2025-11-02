@@ -1,0 +1,1076 @@
+[
+  {
+    "categoryName": "Cranium",
+    "traits": [
+      {
+        "traitName": "Parietal Depression",
+        "traitLocation": "The parietal bone between the superior temporal line and the sagittal suture.",
+	      "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The parietal bone contour is rounded or flattened, but not depressed.",
+            "scoreValue": [],
+            "imagePaths": ["cranium/parietal_depression/abs.png"]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "A portion of the parietal bone is slightly depressed (concave) relative to its normal contour. A depression is most often an oval area located on the middle to posterior portion of the parietal bone.",
+	    "scoreValue": [["ParDep", 1]],
+            "imagePaths": ["pres.png"]
+          }
+        ]
+      },
+      {
+        "traitName": "Spheno-Occipital Synchondrosis",
+        "traitLocation": "Where the basilar portion of the occipital bone and the sphenoid meet.",
+        "scores": [
+          {
+            "scoreName": "Open",
+            "scoreDescription": "Any gap between the sphenoid and occipital visible on the external surface of the basicranium.",
+            "scoreValue": [["SOS", 0]]
+          },
+          {
+            "scoreName": "Closed",
+            "scoreDescription": "There is no evidence of a transversely oriented groove transversely oriented groove where the occipital and sphenoid bones meet.",
+            "scoreValue": []
+          }
+        ]
+      },
+      {
+        "traitName": "Occipital Condyle Lipping",
+        "traitLocation": "The edges of the articulation surfaces of the occipital condyles.",
+	      "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent (<50%)",
+            "scoreDescription": "Lipping does not occur, or it extends <50% of the way around the condyle's circumference.",
+            "scoreValue": []
+          },
+          {
+            "scoreName": "Present (>=50%)",
+            "scoreDescription": "Easily visible, irregular bony lipping must extend outward or inferiorly for >=1 mm around >=50% of the condyle's circumference.",
+            "scoreValue": [["OccCon", 1]]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Vertebrae",
+    "traits": [
+      {
+        "traitName": "Cervical 1 (C1) Dens Articulation Lipping",
+        "traitLocation": "The edges of the joint surface where C1 articulates with the dens of C2 (odontoid process).",
+        "scores": [
+          {
+            "scoreName": "Absent (<50%)",
+            "scoreDescription": "Lipping does not occur, or it is on <50% of the articulation surface's margin.",
+            "scoreValue": [["C1Lip", 0]]
+          },
+          {
+            "scoreName": "Present (>=50%)",
+            "scoreDescription": "An irregular bony growth extends superiorly, inferiorly, or laterally >=1.5 mm from the joint margin, bordering >=50% of the articulation surface.",
+            "scoreValue": [["C1Lip", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Cervical 1 (C1) Dens Articulation Eburnation",
+        "traitLocation": "The joint surface where C1 articulates with the dens (odontoid process) of C2.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "No eburnation exists on either the articulation facet or the additional bone (i.e., lipping) surrounding it.",
+            "scoreValue": [["C1Ebur", 0]]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "Eburnation is characterized an area of shiny, smooth, dense-looking bone on either the joint surface or any lipping surrounding it. A single spot of eburnation is sufficient to be scored as present.",
+            "scoreValue": [["C1Ebur", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 1 (L1) Spinous Process Flattening",
+        "traitLocation": "The posterior (dorsal) end of the spinous process of L1.",
+        "scores": [
+          {
+            "scoreName": "Round",
+            "scoreDescription": "The L1 spinous process is smooth and round (curved posteriorly), as seen in a lateral view, with no signs of ligament ossification.",
+            "scoreValue": [
+              ["L1Spi1", 0]
+		        ]           
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "The L1 spinous process is smooth and flat, when seen in a lateral view, with no ligament ossification. The surface texture of the spinous process is typically the same as in the round category.",
+            "scoreValue": [
+              ["L1Spi1", 1],
+              ["L1Spi2", 0]
+            ]
+          },
+          {
+            "scoreName": "Ossified",
+            "scoreDescription": "The L1 spinous process is ossified when >=1 mm of ossified ligament is visible either posteriorly or around the edges of the posterior end cranially, caudally, laterally. If ossified, the overall shape of the process, as seen in a lateral view, is not important.",
+            "scoreValue": [
+              ["L1Spi2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 1 (L1) Inferior Epiphyseal Ring Fusion",
+        "traitLocation": "Inferior (caudal) margin of L1.",
+        "scores": [
+          {
+            "scoreName": "Not fused (NF)",
+            "scoreDescription": "The epiphyseal ring is not fused",
+            "scoreValue": [
+              ["L1InfEpi1", 0]
+            ]
+          },
+          {
+            "scoreName": "Partially fused (PF)",
+            "scoreDescription": "Some, but not all, of the epiphyseal ring is fused to the body. Often one or more pieces of the partially fused ring are broken off the vertebral body. If the depths of the groove between the ring and body visible on the ventral portion of the vertebral body are open, the trait is scored as partial fusion.",
+            "scoreValue": [
+              ["L1InfEpi1", 1],
+              ["L1InfEpi2", 0]              
+            ]
+          },
+          {
+            "scoreName": "Remnant line (RL)",
+            "scoreDescription": "A remnant line of any length is present when the epiphyseal ring is completely fused, but not fully integrated into the anterior surface of the body. The remnant line is a noticeable, but shallow, groove located 1-2 mm from the articular surface. The groove has rounded borders, and the bottom is clearly visible (fused).",
+            "scoreValue": [
+              ["L1InfEpi2", 1],
+              ["L1InfEpi3", 0]
+            ]
+          },
+          {
+            "scoreName": "Fully fused (FF)",
+            "scoreDescription": "There is no sign of epiphyseal fusion.",
+            "scoreValue": [
+              ["L1InfEpi3", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 1 (L1) Inferior Body Surface Morphology",
+        "traitLocation": "The anterior portion of the inferior surface, 1 cm interior to the vertebral border, including the epiphyseal ring.",
+        "scores": [
+          {
+            "scoreName": "Billows",
+            "scoreDescription": "At least one-half of the scoring area is covered by rounded radiating billows (low, rounded ridges), 10 mm or more of which, as measured along the anterior portion of the vertebra, must be well-defined. Individual billows are 2-3 mm wide when measured from the depths of the grooves bordering a raised area.",
+            "scoreValue": [
+              ["L1InfSur1", 0]
+            ]
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "The vertebral body has a flat appearance. Sometimes extremely low and poorly defined elevations (residual billows) may be present, but the surface is still classified as flat.",
+            "scoreValue": [
+              ["L1InfSur1", 1],
+              ["L1InfSur2", 0]
+            ]
+          },
+          {
+            "scoreName": "Porous (macro or pits)",
+            "scoreDescription": "At least one-third of the scoring area is covered with either holes >1 mm in diameter (macropores) or with a proliferation of micropores forming concentrated areas of pitting.",
+            "scoreValue": [
+              ["L1InfSur2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 5 (L5) Superior Margin Shape",
+        "traitLocation": "The anterior 20 mm (ca. 10 mm either side of the midline) of the superior margin of the fifth lumbar vertebra.",
+        "scores": [
+          {
+            "scoreName": "Round",
+            "scoreDescription": "The ventral margin is smooth and in cross-section it has a curved (rounded) appearance. The margin transitions without interruption from the superior articular surface to the anterior surface.",
+            "scoreValue": [
+              ["L5SupMar1", 0]              
+            ]
+          },
+          {
+            "scoreName": "Sharp",
+            "scoreDescription": "A reasonably sharp edge (angle) is present between the superior articular and anterior surfaces.",
+            "scoreValue": [
+              ["L5SupMar1", 1],
+              ["L5SupMar2", 0]
+            ]
+          },
+          {
+            "scoreName": "Lipped",
+            "scoreDescription": "The margin has any amount of bony lipping. Lipping typically occurs on an otherwise angular margin. If lipping has resulted in fusion to the adjacent lumbar vertebra, it should be scored as lipped.",
+            "scoreValue": [
+              ["L5SupMar2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 5 (L5) Superior Epiphyseal Ring Fusion",
+        "traitLocation": "The superior (cranial) margin of L5.",
+        "scores": [
+          {
+            "scoreName": "Not fused (NF)",
+            "scoreDescription": "The epiphyseal ring is not fused.",
+            "scoreValue": [
+              ["L5SupEpi1", 0]
+            ]
+          },
+          {
+            "scoreName": "Partially fused (PF)",
+            "scoreDescription": "Some, but not all, of the epiphyseal ring is fused to the body. Often one or more pieces of the partially fused ring are broken off the vertebral body. If the depths of the groove between the ring and body visible on the ventral portion of the vertebral body are open, the trait is scored as partial fusion.",
+            "scoreValue": [
+              ["L5SupEpi1", 1],
+              ["L5SupEpi2", 0]
+            ]
+          },
+          {
+            "scoreName": "Remnant line (RL)",
+            "scoreDescription": "A remnant line (RL) of any length is present when the epiphyseal ring is completely fused, but not fully integrated into the anterior surface of the body. The remnant line is a noticeable, but shallow, groove located 1-2 mm from the articular surface. The groove has rounded borders and the bottom is clearly visible (fused).",
+            "scoreValue": [
+              ["L5SupEpi2", 1],
+              ["L5SupEpi3", 0]
+            ]
+          },
+          {
+            "scoreName": "Fully fused (FF)",
+            "scoreDescription": "There is no sign of epiphyseal fusion.",
+            "scoreValue": [
+              ["L5SupEpi3", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar 5 (L5) Superior Body Surface Morphology",
+        "traitLocation": "The anterior potion of the superior surface, 1 cm interior to the vertebral border, including the epiphyseal ring.",
+        "scores": [
+          {
+            "scoreName": "Billows",
+            "scoreDescription": "At least one-half of the scoring area is covered by rounded radiating billows (low, rounded ridges), 10 mm or more of which, as measured along the anterior portion of the vertebra, must be well-defined. Individual billows are 2-3 mm wide when measured from the depths of the grooves bordering a raised area.",
+            "scoreValue": [
+              ["L5SupSur1", 0]
+            ]
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "The vertebral body has a flat appearance. Sometimes extremely low and poorly defined elevations (residual billows) may be present, but the surface is still classified as flat.",
+            "scoreValue": [
+              ["L5SupSur1", 1],
+              ["L5SupSur2", 0]
+            ]
+          },
+          {
+            "scoreName": "Porous",
+            "scoreDescription": "At least one-third of the scoring area is covered with either holes >1 mm in diameter (macropores) or with a proliferation of micropores forming concentrated areas of pitting.",
+            "scoreValue": [
+              ["L5SupSur2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Sacral 1 (S1) Superior Margin Shape",
+        "traitLocation": "Anterior 20 mm (10 mm either side of the midline) of the superior margin of S1.",
+        "scores": [
+          {
+            "scoreName": "Round",
+            "scoreDescription": "The ventral margin is smooth and in cross-section it has a curved (rounded) appearance. The margin transitions without interruption from the superior articular surface to the anterior surface.",
+            "scoreValue": [
+              ["S1Marg1", 0]
+            ]
+          },
+          {
+            "scoreName": "Sharp",
+            "scoreDescription": "A reasonably sharp edge (angle) is present between the superior articular and anterior surfaces.",
+            "scoreValue": [
+              ["S1Marg1", 1],
+              ["S1Marg2", 0]
+            ]
+          },
+          {
+            "scoreName": "Lipped",
+            "scoreDescription": "The margin has any amount of bony lipping. Lipping typically occurs on an otherwise angular margin. If lipping has resulted in fusion to the adjacent lumbar vertebra, it should be scored as lipped.",
+            "scoreValue": [
+              ["S1Marg2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Sacral 1-2 (S1-2) Body Fusion",
+        "traitLocation": "Anterior midline surface of the sacrum where the first two sacral bodies meet.",
+        "scores": [
+          {
+            "scoreName": "Gap >=10mm",
+            "scoreDescription": "A gap, without interruption, of >=10 mm is present.",
+            "scoreValue": [
+              ["S12Fus1", 0]
+            ]
+          },
+          {
+            "scoreName": "Gap <10mm",
+            "scoreDescription": "A gap <10 mm long is present.",
+            "scoreValue": [
+              ["S12Fus1", 1],
+              ["S12Fus2", 0]
+            ]
+          },
+          {
+            "scoreName": "Closed",
+            "scoreDescription": "There is no evidence of a gap between the anterior sacral bodies.",
+            "scoreValue": [
+              ["S12Fus2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Sacral Extreme Curvature 'Elbow' (Female subjects only)",
+        "traitLocation": "The anterior (ventral) surface of the sacrum - the angle of interest is located between S2 and S4, including the joints between them (S2-3 & S3-4).",
+	      "operatorInformation": "Enter only for females.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The anterior curvature of the sacrum is a relatively smooth arc. If a fracture is present, it does not create a large enough change in the sacral curvature to be considered present.",
+            "scoreValue": []
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "The normal superior to inferior curve of the sacrum must be interrupted by a distinct break (a sharp change in angle) of approximately 90 -110°.",
+            "scoreValue": [["SacElb", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Thoracic Vertebral Lipping (Osteophytes)",
+        "traitLocation": "The anterior portions of the superior and inferior margins of thoracic vertebrae.",
+        "scores": [
+          {
+            "scoreName": "Absent (<5 mm)",
+            "scoreDescription": "No or little evidence of lipping (osteophytes). Lipping, if present, extends <5 mm anteriorly, cranially, or caudally from vertebral margins.",
+            "scoreValue": [["Tlip", 0]]
+          },
+          {
+            "scoreName": "Present (>=5 mm)",
+            "scoreDescription": "Lipping extends anteriorly, cranially, or caudally from the margin >=5 mm on one or more thoracic vertebrae.",
+            "scoreValue": [["Tlip", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Lumbar Vertebral Lipping (Osteophytes)",
+        "traitLocation": "The anterior portions of the superior and inferior margins of lumbar vertebrae.",
+        "scores": [
+          {
+            "scoreName": "Absent (<5 mm)",
+            "scoreDescription": "No or little evidence of lipping (osteophytes). Lipping, if present, extends <5 mm anteriorly, cranially, or caudally from vertebral margins.",
+            "scoreValue": [["Llip", 0]]
+          },
+          {
+            "scoreName": "Present (>=5 mm)",
+            "scoreDescription": "Lipping extends anteriorly, cranially, or caudally from the margin >=5 mm on one or more lumbar vertebrae.",
+            "scoreValue": [["Llip", 1]]
+          }
+        ]
+      }
+    ]
+  },
+    {
+    "categoryName": "Sternum and Ribs",
+    "traits": [
+      {
+        "traitName": "Sternum Central Dorsal Ridge",
+        "traitLocation": "The dorsal (posterior) surface of the completely fused sternal body, excluding the manubrium and xiphoid process.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "There is no evidence of a narrow central ridge or it is short, measuring <15 mm.",
+            "scoreValue": [["SteRid", 0]]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "A single, central ridge runs superiorly to inferiorly along the midline of the dorsal sternal surface. It must be >=15 mm long and 1.5 mm wide at least at one point.",
+            "scoreValue": [["SteRid", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Rib 3-10 Sternal End Rim Profile",
+        "traitLocation": "The sternal end of ribs three through ten (R3-10), specifically the oval margin of each rib end where bone meets costal cartilage.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Regular",
+            "scoreDescription": "The end of the rib is straight or scalloped, but not lipped.",
+            "scoreValue": [["RimProfile", 0]]
+          },
+          {
+            "scoreName": "Irregular",
+            "scoreDescription": "The margins of the sternal end are typically thin; even a small amount of bone growth results in an irregular appearance. In many cases, additional irregular ossifications project beyond the original borders of the rim resulting in a ragged, or claw-like, appearance.",
+            "scoreValue": [["RimProfile", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Rib 3-10 Thickness 'Shingle'",
+        "traitLocation": "The ventral third of ribs three through ten (R3-10)",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Normal",
+            "scoreDescription": "The bone has a thick and robust appearance. The rib cross sections form an elongated oval with a rounded superior border and, typically, a sharp inferior border adjacent to the costal groove.",
+            "scoreValue": [["Shingle", 0]]
+          },
+          {
+            "scoreName": "Shingle",
+            "scoreDescription": "Shingle ribs are quite narrow in cross section, and taper to a sharp margin both superiorly and inferiorly. The cortices are thin, especially noticeable in broken bones, and trabeculae are sparse. In cross section, the exterior and interior sides of the ribs parallel one another, instead of the usual oval shape in most adults. If present, the flattening generally occurs in the most distal (costal) thirds of the ribs, but it can extend to as much as the distal two-thirds of the rib body.",
+            "scoreValue": [["Shingle", 1]]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Upper Limb",
+    "traits": [
+      {
+        "traitName": "Clavicle Medial Epiphysis Fusion",
+        "traitLocation": "Edges and surface of the medial end of the clavicle.",
+        "operatorInformation": "Left side; use right if left is missing.",
+        "scores": [
+          {
+            "scoreName": "Not fused (NF)",
+            "scoreDescription": "A bumpy to ridged surface shows no evidence of a partly fused epiphysis.",
+            "scoreValue": [
+              ["ClaEpi1", 0]
+            ]
+          },
+          {
+            "scoreName": "Partially fused (PF)",
+            "scoreDescription": "A low, smooth epiphysis covers part of the original irregular surface. It can be centrally or peripherally located. There is a distinct space between the edge of the fusing epiphysis and the original bone surface.",
+            "scoreValue": [
+              ["ClaEpi1", 1],
+              ["ClaEpi2", 0]
+            ]
+          },
+          {
+            "scoreName": "Remnant line (RL)",
+            "scoreDescription": "There is a narrow and shallow groove where the epiphysis joins the rest of the bone. The line is a shallow smooth-surfaced groove >=5 mm long.",
+            "scoreValue": [
+              ["ClaEpi2", 1],
+              ["ClaEpi3", 0]
+            ]
+          },
+          {
+            "scoreName": "Fully fused (FF)",
+            "scoreDescription": "There is no evidence of where the epiphysis fused to the bone.",
+            "scoreValue": [
+              ["ClaEpi3", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Clavicle Medial Bumps 'Gravel'",
+        "traitLocation": "Surface of the medial end of the clavicle.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The surface of the medial clavicle is smooth, with or without microporosity, or the irregular bone growth does not cover 5 mm or more of the surface. If the epiphysis is not present (not fused or partly fused), then this trait is scored as absent.",
+            "scoreValue": [["ClaGra", 0]]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "Irregular bone that is >=5 mm in its longest dimension is present on top of the original clavicular surface.  In many cases, the texture resembles a gravel road's surface.",
+            "scoreValue": [["ClaGra", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Clavicle Medial Macroporosity",
+        "traitLocation": "Surface of the medial end of the clavicle.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The medial end is smooth, or it has fewer than three macropores. It is also scored as absent when the epiphysis is not fused or partly fused.",
+            "scoreValue": [
+              ["ClaMedPor", 0]
+            ]
+          },
+          {
+            "scoreName": "Macroporosity",
+            "scoreDescription": "The surface has >=3 pores that are >=1 mm in diameter.",
+            "scoreValue": [
+              ["ClaMedPor", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Clavicle Lateral Macroporosity",
+        "traitLocation": "The lateral articulation surface where the clavicle meets the acromion process of the scapula.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The articular surface is smooth, has only microporosity, or has <3 large pores (openings).",
+            "scoreValue": [["ClaLatPor", 0]]
+          },
+          {
+            "scoreName": "Marcoposity (>=3 holes)",
+            "scoreDescription": "The articulation surface has >=3 pores that are >=1 mm.",
+            "scoreValue": [["ClaLatPor", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Scapula Glenoid Fossa Lipping",
+        "traitLocation": "The margins of the articulation surface of the glenoid fossa.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The entire glenoid fossa has smooth rounded edges that flow without interruption from the articular surface to the external surface of the joint and beyond.",
+            "scoreValue": [
+              ["GlenFosLip1", 0]
+            ]
+          },
+          {
+            "scoreName": "Present (<1/2)",
+            "scoreDescription": "Some sharp elevation or irregular bony lipping is present, but it covers <1/2 of the glenoid fossa's circumference.",
+            "scoreValue": [
+              ["GlenFosLip1", 1],
+              ["GlenFosLip2", 0]
+            ]
+          },
+          {
+            "scoreName": "Present (>=1/2)",
+            "scoreDescription": "A sharp, elevated margin or bony lipping is present around >=1/2 of the glenoid fossa's circumference.",
+            "scoreValue": [
+              ["GlenFosLip2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Humerus Weight",
+        "traitLocation": "The entire humerus, either side.",
+        "operatorInformation": "Heaviest of the left or right bones.",
+        "scores": [
+          {
+            "scoreName": "Normal",
+            "scoreDescription": "The weight of the humerus falls within what is expected for an individual of that size. Bones that are borderline, or only slightly lighter than normal, should be scored as normal. This observation is subjective, so err on the side of classifying the bone as normal.",
+            "scoreValue": [["HumWt", 0]]
+          },
+          {
+            "scoreName": "Light",
+            "scoreDescription": "The bone must be noticeably lighter than expected, but otherwise normal in appearance. A light humerus typically feels like an extremely light, hollow, cortical bone shell.",
+            "scoreValue": [["HumWt", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Humerus Lesser Tubercle Bumps",
+        "traitLocation": "Surface of the lesser tubercle where subscapularis inserts; that is, between the anatomical neck, intertubercular groove and lesser tubercle's crest.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The surface is smooth, or <1/3 of it is covered by bumps.",
+            "scoreValue": [["HumLesTubBum", 0]]
+          },
+          {
+            "scoreName": "Present (>= 1/3)",
+            "scoreDescription": "Bumps range from low, rounded elevations extending just above the original bone's surface to large, irregular exostoses of several millimeters or more. Bumps must cover >=1/3 of the tubercle's surface.",
+            "scoreValue": [["HumLesTubBum", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Humerus Lesser Tubercle Margin",
+        "traitLocation": "The lateral-inferior margin of the part of the lesser tubercle of the humerus that is scored for tubercle bumps.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Round",
+            "scoreDescription": "The margin and adjoining surface of the tubercle blend seamlessly together; the margin has a rounded configuration. If a low, smooth elevation bordering the margin is present, it is a minor feature that does not meet the length criterion of the raised category.",
+            "scoreValue": [
+              ["HumLesTubMar1", 0]
+            ]
+          },
+          {
+            "scoreName": "Raised",
+            "scoreDescription": "At least one-half of the margin of the tubercle is raised above the surface of the lesser tubercle; this elevation can be seen as well as felt. The raised area can be either smooth or rough, but it clearly rises above most of the surface where the subscapularis inserts.",
+            "scoreValue": [
+              ["HumLesTubMar1", 1],
+              ["HumLesTubMar2", 0]
+            ]
+          },
+          {
+            "scoreName": "Lipped",
+            "scoreDescription": "The margin of the tubercle is noticeably roughened with irregular bony growths extending above a rounded or raised tubercle margin. The margin is irregular and distinct from the tubercle's adjoining face (where bumps might also be present).",
+            "scoreValue": [
+              ["HumLesTubMar2", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Humerus Lateral Epicondyle",
+        "traitLocation": "Anterior surface and posterior edge of the lateral epicondyle of the humerus.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Smooth",
+            "scoreDescription": "The surface and posterior border of this area is entirely or mostly smooth; that is, it lacks >=10 mm of posterior rim or exostoses that cover >=1/2 of the surface.",
+            "scoreValue": [["HumLatEpi", 0]]
+          },
+          {
+            "scoreName": "Rough",
+            "scoreDescription": "Numerous small and flat exostoses produce a markedly rough surface that covers >=1/2 of the epicondyle's anterior-medial surface or a rim >=10 mm long is present on the posterior edge. Both exostoses and a rim can be present, although either one of them, as long as the size criteria are met, would be sufficient for this feature to be classified as rough.",
+            "scoreValue": [["HumLatEpi", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Trapezium Lipping",
+        "traitLocation": "The circumference of the saddle-shaped articulation surface for the first metacarpal",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "Either no lipping, or the lipping projects outward <2 mm from the joint margin. The exception is a single >=2 mm example of lipping, and it is scored as absent; two or more such examples must be visible to classify lipping as present.",
+            "scoreValue": [["TrapLip", 0]]
+          },
+          {
+            "scoreName": "Present (>=2 mm)",
+            "scoreDescription": "Lipping extends >=2 mm outward from at least two points along the margin of the saddle-shaped articulation surface. In advanced cases, the articulation surface becomes flat to irregular, lipping at the margin is extensive, and the bone no longer retains its original shape.",
+            "scoreValue": [["TrapLip", 1]]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Lower Limb",
+    "traits": [
+      {
+        "traitName": "Femur Fovea Margin Lipping",
+        "traitLocation": "The margin of the femoral fovea where the ligamentum teres attaches (ligamentum capitis femoris).",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The edge of the fovea is smooth or, more typically, has a rounded or sharp margin.",
+            "scoreValue": [["FemFov", 0]]
+          },
+          {
+            "scoreName": "Lipped",
+            "scoreDescription": "Irregular bony growth extends continuously for >=10 mm around the circumference fovea margin.",
+            "scoreValue": [["FemFov", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Femur Greater Trochanter Roughening",
+        "traitLocation": "The lateral surface of the greater trochanter.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The bone is smooth, or only a small area measuring <10 x <20 mm has a rough appearance.",
+            "scoreValue": [
+              ["FemTroRou", 0]
+            ]
+          },
+          {
+            "scoreName": "Rough",
+            "scoreDescription": "Bone that has a slightly to extensively rough surface exceeds a 10 x 20 mm triangle in any dimension. Sometimes the irregular ossification extends distally from the greater trochanter's inferior margin, overhanging the shaft. ",
+            "scoreValue": [
+              ["FemTroRou", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Femur Trochanteric Fossa Exostoses",
+        "traitLocation": "Within the deepest part of the trochanteric fossa in the vicinity of the obturator externus insertion.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The area is smooth with little or no evidence of exostoses, which are generally sharp. A single exostosis is considered absent.",
+            "scoreValue": [["FemTroFosExo", 0]]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "At least two exostoses are clearly visible in the depth of the fossa. Occasionally exostoses merge into a single large knob with multiple peaks; such ossifications are scored as present.",
+            "scoreValue": [["FemTroFosExo", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Femur trochanteric medial exostoses",
+        "traitLocation": "The area immediately proximal to the trochanteric fossa on the medial side of the proximal end of the greater trochanter where the obturator internus and gemelli insert.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The area is smooth or has, at most, a single exostosis.",
+            "scoreValue": [["FemTroFosMedSurExo", 0]]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "A patch of >=2 exostoses, similar to those seen in the trochanteric fossa, are present.",
+            "scoreValue": [["FemTroFosMedSurExo", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Tibia weight",
+        "traitLocation": "The entire tibia, either side.",
+        "operatorInformation": "Heaviest of the left or right bones.",
+        "scores": [
+          {
+            "scoreName": "Normal",
+            "scoreDescription": "The weight of the tibia falls within what is expected for an individual of that size. Bones that are borderline, or only slightly lighter than normal, should be scored as normal.",
+            "scoreValue": [["TibWei", 0]]
+          },
+          {
+            "scoreName": "Light",
+            "scoreDescription": "The bone must be noticeably lighter than expected, but otherwise normal in appearance. A light tibia is often little more than a thin shell of cortical bone.",
+            "scoreValue": [["TibWei", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Innominate Weight",
+        "traitLocation": "The entire innominate, either side.",
+        "operatorInformation": "Heaviest of the left or right bones.",
+        "scores": [
+          {
+            "scoreName": "Normal",
+            "scoreDescription": "The weight of the innominate falls within what is expected for an individual of that size. Bones that are borderline, or only slightly lighter than normal, should be scored as normal.",
+            "scoreValue": [["InnWei", 0]]
+          },
+          {
+            "scoreName": "Light",
+            "scoreDescription": "The bone must be noticeably lighter than expected, but otherwise normal in appearance. In light innominates, the cortical bone is often extremely fragile and paper-thin.",
+            "scoreValue": [["InnWei", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Iliac Crest Fusion",
+        "traitLocation": "The most superior part of the iliac blade anterior to, and including, the iliac tubercle.",
+        "operatorInformation": "Left; use right if left is absent.",
+        "scores": [
+          {
+            "scoreName": "Not fused (NF)",
+            "scoreDescription": "The epiphysis is not present, and the underlying epiphyseal surface is visible.",
+            "scoreValue": [
+              ["IllCreFus1", 0]
+            ]
+          },
+          {
+            "scoreName": "Partially fused (PF)",
+            "scoreDescription": "The epiphysis is only partly joined to the blade of the ilium. The edges of the epiphysis are sharp and the bottom of the groove between the epiphysis and iliac body is open. In many cases, the partially fused epiphysis is partly broken from the iliac blade.",
+            "scoreValue": [
+              ["IllCreFus1", 1],
+              ["IllCreFus2", 0]
+            ]
+          },
+          {
+            "scoreName": "Remnant Line (RL)",
+            "scoreDescription": "The epiphysis is completely fused, but not fully integrated into the ilium. A shallow, but distinct, channel >=10 mm long with a rounded bottom is present.",
+            "scoreValue": [
+              ["IllCreFus2", 1],
+              ["IllCreFus3", 0]
+            ]
+          },
+          {
+            "scoreName": "Fully fused (FF)",
+            "scoreDescription": "There is no evidence of where the epiphysis has joined the rest of the ilium.",
+            "scoreValue": [
+              ["IllCreFus3", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Acetabulum Posterior Margin Lipping",
+        "traitLocation": "The 30 mm forming the posterior portion of the acetabulum's outer margin.",
+        "operatorInformation": "Enter lowest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "The outer edge of the acetabulum is smooth, and it can be either round or sharp. That is, in cross-section the rim is U- or V-shaped from the articulation (joint) surface to the outer surface of the bone.",
+            "scoreValue": [["AcePosMar", 0]]
+          },
+          {
+            "scoreName": "Present (>=10 mm)",
+            "scoreDescription": "Noticeable and irregular bony lipping occurs along a continuous >=10 mm of the acetabulum's margin.",
+            "scoreValue": [["AcePosMar", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Acetabulum Inferior End Lipping",
+        "traitLocation": "The margin of the inferior end of the acetabular articulation surface.",
+        "operatorInformation": "Enter lowest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "Lipping is absent, or it projects outward <3 mm.",
+            "scoreValue": [["AceEndLip", 0]]
+          },
+          {
+            "scoreName": "Lipped (>=3 mm)",
+            "scoreDescription": "Lipping projects >=3 mm beyond the original margin of the articular surface.",
+            "scoreValue": [["AceEndLip", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Ischial Tuberosity Bumps",
+        "traitLocation": "The upper portion of the ischial tuberosity; this area is superior to a low ridge that separates the attachments for the semitendinosus and semimembranosus superiorly, and the long head of the biceps femoris inferiorly.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "This part of the ischial tuberosity is smooth.",
+            "scoreValue": [
+              ["IscTubBum", 0]
+            ]
+          },
+          {
+            "scoreName": "Present",
+            "scoreDescription": "One or more irregular, but low, bony growths disfigure part or all of the surface of the originally smooth ischial tuberosity, giving it a bumpy appearance.",
+            "scoreValue": [
+              ["IscTubBum", 1]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Auricular Surface",
+    "traits": [
+      {
+        "traitName": "Inferior Auricular Surface Porosity",
+        "traitLocation": "The most inferior 10 mm of the inferior demiface. Do not include marginal lipping that extends beyond the original margin of the joint surface.",
+        "operatorInformation": "Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Smooth",
+            "scoreDescription": "There is little or no porosity in the scored area.",
+            "scoreValue": [["InfSurPor", 0]]
+          },
+          {
+            "scoreName": "Porous",
+            "scoreDescription": "Microporosity, macroporosity, or a combination of the two covers >=1/2 of the scored area.",
+            "scoreValue": [["InfSurPor", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Superior Posterior Iliac Exostoses",
+        "traitLocation": "The medial surface of the posterior ilium where the ventral sacroiliac ligament attaches. This generally raised and roughened area is near the superior end of the sacroiliac joint.",
+        "operatorInformation": "Enter lowest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Smooth",
+            "scoreDescription": "The area is almost entirely smooth with, at most, one isolated small exostosis.",
+            "scoreValue": [["SupIliExo", 0]]
+          },
+          {
+            "scoreName": "Exostoses",
+            "scoreDescription": "More than one exostosis is present; they can appear as rounded, pointed, or jagged elevations of bone.",
+            "scoreValue": [["SupIliExo", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Posterior Iliac Exostoses",
+        "traitLocation": "The area where exostoses occur is on the medial side of the ilium bordered posteriorly by the iliac crest, anteriorly by the sacroiliac joint, superiorly by a slightly raised area typically surmounted by bony exostoses (superior posterior exostoses), and inferiorly by a similarly raised area typically covered by exostoses. Excluded is a 5-10 mm wide area immediately posterior to the auricular surface where exostoses never form.",
+        "operatorInformation": "If either left or right is 0, enter 0 (smooth). If either left or right is 2, enter 2 (continuous exostoses). The data entry procedure is designed to utilize rarely occurring low (0, smooth) or high (2, continous exostoses) scores. The great majority of skeletons will be scored as 1 (discontinuous exostoses).",
+        "scores": [
+          {
+            "scoreName": "Smooth",
+            "scoreDescription": "There are no exostoses in the scored area; it is completely smooth.",
+            "scoreValue": [
+                     ["PostIliExo1", 0]
+          ]
+          },
+          {
+            "scoreName": "Discontinuous exostoses",
+            "scoreDescription": "There is at least one exostosis in the scored area, and typically many of them. Collectively, they do not cover the entire area of interest.",
+            "scoreValue": [
+                     ["PostIliExo1", 1],
+                     ["PostIliExo2", 0]
+          ]
+          },
+          {
+            "scoreName": "Continuous exostoses",
+            "scoreDescription": "The scored area - that is, the ilium between the superior and inferior posterior iliac exostoses - is entirely covered with low, rounded, or pointed exostoses. Little, if any, of the original smooth bone surface is visible.",
+            "scoreValue": [
+                     ["PostIliExo2", 1]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryName": "Pubic Symphysis",
+    "traits": [
+      {
+        "traitName": "Symphyseal Collar",
+        "traitLocation": "Immediately anterior to the ventral margin of the pubic symphysis. ",
+        "operatorInformation": "Enter only for males. Enter highest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Absent",
+            "scoreDescription": "There is no bony growth in the collar’s position or, if present, it is <10mm long.",
+            "scoreValue": []
+          },
+          {
+            "scoreName": "Collar",
+            "scoreDescription": "There is extra bony growth with the appearance of ossified ligaments anterior and parallel to the ventral border of the symphyseal face that extends for >=10 mm. The ossification can be continuous or occur in multiple segments, each of several millimeters, that collectively sum to >=10 mm.",
+            "scoreValue": [["PubCol", 1]]
+          }
+        ]
+      },
+      {
+        "traitName": "Symphyseal Relief",
+        "traitLocation": "The entire symphyseal face.",
+        "operatorInformation": "Enter lowest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Billows",
+            "scoreDescription": "Clearly visible and discrete elevations, ranging from sharply crested ridges to low rounded hills, cover most of the symphyseal face. The overall impression is one of a series of parallel ridges (billows).",
+            "scoreValue": [["PubRel", 0]]
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "The overall impression is that the symphyseal face is flat. Occasionally low and barely visible billows can be seen, although they are hard to detect except in good light and upon close examination. A flat or slightly recessed face can be surrounded by a well-developed narrow rim. These symphyseal faces can be marred by deep pits, small sharp exostoses, or both. Together they give the surface an irregular, disfigured appearance. Typically a symphyseal face classified as flat is associated with the rim and breakdown stages of the ventral and dorsal margins.",
+            "scoreValue": [["PubRel", 1]]
+          }
+        ]
+      },
+    {
+        "traitName": "Superior Apex (Protuberance)",
+        "traitLocation": "The superior part of the symphyseal face.",
+        "operatorInformation": "Enter lowest left or right side score.",
+        "scores": [
+          {
+            "scoreName": "Serrated",
+            "scoreDescription": "Billowing is present in the superior part of the symphyseal face, and there are no signs of a bony protuberance.",
+            "scoreValue": [
+              ["PubSupApe1", 0]
+            ]
+          },
+          {
+            "scoreName": "Knob",
+            "scoreDescription": "A distinct bony knob of variable dimensions with well-defined margins is visible in the superior part of the symphyseal face. It projects above the plane(s) defined by the immediately adjacent symphyseal face (the dorsal demiface, ventral beveled area, or both). The surface of the bony protuberance is typically smooth to fine grained.",
+            "scoreValue": [
+              ["PubSupApe1", 1],
+              ["PubSupApe2", 0]
+            ]
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "The superior part of the symphyseal face shows little to no evidence of a low bony elevation. This stage, the absence of a distinctly raised area, is distinguishable from the early stage because the superior portion of the symphyseal face is flat, not the billowed surface typical of the initial early stage.",
+            "scoreValue": [
+              ["PubSupApe2", 1]
+            ]
+          }
+        ]
+      },
+{
+        "traitName": "Ventral Symphyseal Margin",
+        "traitLocation": "Ventral margin of the pubic symphysis.",
+        "operatorInformation": "Left side; use right if left is missing.",
+        "scores": [
+          {
+            "scoreName": "Serrated",
+            "scoreDescription": "The ventral rampart has not yet started to form. The ventral part of the symphyseal face is either covered with ridges and furrows or is in the process of flattening (beveling) ventrally. There are no distinct outgrowths of bone that ultimately form part of the ventral rampart.",
+            "scoreValue": [
+              ["PubVenMar1", 0]
+            ]
+          },
+          {
+            "scoreName": "Rampart",
+            "scoreDescription": "The ventral rampart is either in the process of forming or is complete. When forming, the rampart extends from one or both ends of the symphysis. A complete rampart presents an uninterrupted flat surface from the dorsal to ventral margins of the symphyseal face.",
+            "scoreValue": [
+              ["PubVenMar1", 1],
+              ["PubVenMar2", 0]
+            ]
+          },
+          {
+            "scoreName": "Rim",
+            "scoreDescription": "A narrow, sharp to irregular bony elevation (rim) >=10 mm long bordering a slightly depressed to irregular symphyseal face is present. The rim can be either a continuous ridge of bone or several segments, as long as >=10 mm of elevated border is present. The rim's crest can be low and round, or narrow and sharp. A ventral rim is always formed on top of a completed ventral rampart (excluding any ventral hiatus).",
+            "scoreValue": [
+              ["PubVenMar2", 1],
+              ["PubVenMar3", 0]
+            ]
+          },
+          {
+            "scoreName": "Breakdown",
+            "scoreDescription": "Breakdown of the ventral margin is indicated by pitting and a destruction of the rim. To be scored as present, the breakdown of the ventral margin must be >=10 mm long (either in one spot, or when two or more of such areas are combined).",
+            "scoreValue": [
+              ["PubVenMar3", 1]
+            ]
+          }
+        ]
+      },
+      {
+        "traitName": "Dorsal Symphyseal Margin",
+        "traitLocation": "Dorsal margin of the pubic symphysis.",
+        "operatorInformation": "Left side; use right if left is missing.",
+        "scores": [
+          {
+            "scoreName": "Serrated",
+            "scoreDescription": "Ridges and furrows typical of pronounced billowing extend uninterrupted to the edge of the bone.",
+            "scoreValue": [
+              ["PubDorMar1", 0]
+            ]
+          },
+          {
+            "scoreName": "Flat",
+            "scoreDescription": "A well-defined area >=10 mm long is present where the symphyseal face meets the dorsal margin, but >=10 mm of rim is not present. Flattening usually starts in the superior part of the dorsal demiface; the remainder of the margin has the ridge and valley configuration typical of a youthful symphyseal face. This flattening eventually extends along the entire symphyseal face where it meets the dorsal margin. A small area at the inferior end of the dorsal margin occasionally retains an undulating appearance.",
+            "scoreValue": [
+              ["PubDorMar1", 1],
+              ["PubDorMar2", 0]
+            ]
+          },
+          {
+            "scoreName": "Rim",
+            "scoreDescription": "An elevated bony rim demarcates a flat or, infrequently, an irregular face. The rim projects slightly above the symphyseal face, and its crest can be blunt or sharp. The rim must be >=10 mm long. The 10 mm rule pertains to either a continuous rim or discontinuous segments that together equal or exceed that length. A rim typically develops first along the superior part of the dorsal margin. It can, however, occur anywhere along the dorsal margin.",
+            "scoreValue": [
+              ["PubDorMar2", 1],
+              ["PubDorMar3", 0]
+            ]
+          },
+          {
+            "scoreName": "Breakdown",
+            "scoreDescription": "The dorsal margin where the rim is located shows evidence of breakdown when pitting and destruction of the edge of the pubic symphysis is >=10 mm long. Breakdown must be >=10 mm long either in one spot or when two or more areas of destruction are combined.",
+            "scoreValue": [
+              ["PubDorMar3", 1]
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
