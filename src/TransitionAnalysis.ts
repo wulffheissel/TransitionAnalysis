@@ -1,5 +1,5 @@
-import * as Datasets from "./Datasets";
-import * as Analysis from "./datatypes/Analysis";
+import * as Datasets from './Datasets';
+import * as Analysis from './datatypes/Analysis';
 
 /**
  * Calculates the estimate
@@ -12,7 +12,7 @@ import * as Analysis from "./datatypes/Analysis";
 export function calculateEstimates(
   transitionCurveScores: [string, number][],
   sex: Analysis.referenceSex,
-  region: Analysis.referenceRegion,
+  region: Analysis.referenceRegion
 ): [number, number][] {
   const estimates: [number, number][] = [];
   const dataset: any = getDataset(sex, region);
@@ -26,16 +26,20 @@ export function calculateEstimates(
       const column =
         dataset[datasetIndex][transitionCurveScores[scoreIndex][0]];
       const sc_i = transitionCurveScores[scoreIndex][1];
-      
+
       const expColumn = Math.pow(Math.E, column);
       const logArg = 1 - expColumn;
-      
+
       // Debug logging to identify -Infinity sources
       if (logArg <= 0) {
-        console.warn(`Invalid log argument: 1 - Math.pow(Math.E, ${column}) = ${logArg}`);
-        console.warn(`Age: ${dataset[datasetIndex].Age}, Column: ${column}, ExpColumn: ${expColumn}`);
+        console.warn(
+          `Invalid log argument: 1 - Math.pow(Math.E, ${column}) = ${logArg}`
+        );
+        console.warn(
+          `Age: ${dataset[datasetIndex].Age}, Column: ${column}, ExpColumn: ${expColumn}`
+        );
       }
-      
+
       const logValue = logArg > 0 ? Math.log(logArg) : -Infinity;
       estimate += sc_i * column + (1 - sc_i) * logValue;
     }
@@ -53,19 +57,22 @@ export function calculateEstimates(
  */
 export function adjustWithPriorAgeDistribution(
   estimates: [number, number][],
-  priorAgeDistribution: Analysis.priorAgeDistributionNames,
+  priorAgeDistribution: Analysis.priorAgeDistributionNames
 ): void {
   const ageDistributionData: any =
     getPriorAgeDistribution(priorAgeDistribution);
   for (let i = 0; i < estimates.length; i++) {
-    const distributionValue = ageDistributionData[i]["Distribution"];
-    
+    const distributionValue = ageDistributionData[i]['Distribution'];
+
     // Debug logging to identify -Infinity sources
     if (distributionValue <= 0) {
-      console.warn(`Invalid distribution value at index ${i}: ${distributionValue}`);
+      console.warn(
+        `Invalid distribution value at index ${i}: ${distributionValue}`
+      );
     }
-    
-    const logDistribution = distributionValue > 0 ? Math.log(distributionValue) : -Infinity;
+
+    const logDistribution =
+      distributionValue > 0 ? Math.log(distributionValue) : -Infinity;
     estimates[i][1] = estimates[i][1] + logDistribution;
   }
 }
@@ -79,12 +86,11 @@ export function adjustWithPriorAgeDistribution(
 export function calculateIntervals(
   num_traits: number,
   estimates: [number, number][],
-  desiredInterval: confidenceIntervals,
+  desiredInterval: confidenceIntervals
 ) {
   if (num_traits >= 15)
-    return calculateIntervalsLarge(estimates, desiredInterval)
-  else
-    return calculateIntervalsSmall(estimates, desiredInterval)
+    return calculateIntervalsLarge(estimates, desiredInterval);
+  else return calculateIntervalsSmall(estimates, desiredInterval);
 }
 
 function calculateIntervalsSmall(
@@ -112,21 +118,28 @@ function calculateIntervalsSmall(
   }
 
   const threshold = chiSquareCritical / 2;
-  
+
   const validAges = estimates
-    .filter(entry => {
+    .filter((entry) => {
       const logLikDiff = maxLogLik - entry[1];
       return logLikDiff <= threshold;
     })
-    .map(entry => entry[0]);
-  
+    .map((entry) => entry[0]);
+
   const lower = Math.min(...validAges);
   const upper = Math.max(...validAges);
+
+  let unbiasedPointEstimate = pointEstimate;
+
+  if (unbiasedPointEstimate > 66.6) {
+    const adjustment = 27.31 - 0.41 * pointEstimate;
+    unbiasedPointEstimate = unbiasedPointEstimate + adjustment;
+  }
 
   return {
     unbiasedPointEstimateLowerBound: lower > 15 ? lower.toFixed(1) : 15,
     unbiasedPointEstimateUpperBound: upper < 105 ? upper.toFixed(1) : 105,
-    unbiasedPointEstimate: pointEstimate,
+    unbiasedPointEstimate: unbiasedPointEstimate,
     pointEstimate: pointEstimate,
     bestEstimateProbability: maxLogLik,
   };
@@ -149,14 +162,25 @@ function calculateIntervalsLarge(
     -5.27527384555702 +
     0.421493544679886 * unbiasedPointEstimate -
     0.003374894677703 * unbiasedPointEstimate * unbiasedPointEstimate +
-    0.00000476501505 * unbiasedPointEstimate * unbiasedPointEstimate * unbiasedPointEstimate;
+    0.00000476501505 *
+      unbiasedPointEstimate *
+      unbiasedPointEstimate *
+      unbiasedPointEstimate;
 
-  let unbiasedPointEstimateLowerBound = unbiasedPointEstimate - desiredInterval * std;
-  let unbiasedPointEstimateUpperBound = unbiasedPointEstimate + desiredInterval * std;
+  let unbiasedPointEstimateLowerBound =
+    unbiasedPointEstimate - desiredInterval * std;
+  let unbiasedPointEstimateUpperBound =
+    unbiasedPointEstimate + desiredInterval * std;
 
   return {
-    unbiasedPointEstimateLowerBound: unbiasedPointEstimateLowerBound > 15 ? unbiasedPointEstimateLowerBound.toFixed(1) : 15,
-    unbiasedPointEstimateUpperBound: unbiasedPointEstimateUpperBound < 105 ? unbiasedPointEstimateUpperBound.toFixed(1) : 105,
+    unbiasedPointEstimateLowerBound:
+      unbiasedPointEstimateLowerBound > 15
+        ? unbiasedPointEstimateLowerBound.toFixed(1)
+        : 15,
+    unbiasedPointEstimateUpperBound:
+      unbiasedPointEstimateUpperBound < 105
+        ? unbiasedPointEstimateUpperBound.toFixed(1)
+        : 105,
     unbiasedPointEstimate: unbiasedPointEstimate,
     pointEstimate: pointEstimate,
     bestEstimateProbability: max[1],
@@ -181,7 +205,7 @@ export enum confidenceIntervals {
  */
 function getDataset(
   subjectSex: Analysis.referenceSex,
-  region: Analysis.referenceRegion,
+  region: Analysis.referenceRegion
 ): Datasets.curveDatasets {
   let dataset = Datasets.curveDatasets.NACurvesUnknown;
   if (
@@ -235,7 +259,7 @@ function getDataset(
  * @returns A JSON dataset for the given ages and distribution.
  */
 function getPriorAgeDistribution(
-  distributionName: Analysis.priorAgeDistributionNames,
+  distributionName: Analysis.priorAgeDistributionNames
 ): Datasets.priorAgeDistributionDatasets {
   let distribution = Datasets.priorAgeDistributionDatasets.MedivalRuralDk;
   switch (distributionName) {
